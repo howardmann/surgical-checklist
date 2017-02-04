@@ -1,12 +1,12 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
+export default Ember.Component.extend({
   actions: {
     addItem(value){
       // Return and reset if blank
       if (!value || !value.trim()){ return this.set('newItem', ''); }
       // Create new record and save
-      let newTodo = this.store.createRecord('todo',{
+      let newTodo = this.model.store.createRecord('todo',{
         title: value,
         isComplete: false
       });
@@ -19,6 +19,7 @@ export default Ember.Controller.extend({
     },
     checkItem(item){
       item.toggleProperty('isComplete');
+      item.save();
     },
     editItem(item){
       item.toggleProperty('isEdit');

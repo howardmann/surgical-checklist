@@ -1,0 +1,12 @@
+<h2>Todos List</h2>
+
+<form {{action 'addItem' newItem on="submit"}}>
+  {{input type="text" placeholder="enter item" value=newItem}}
+  <input type="submit">
+</form>
+
+<ul>
+{{#each model as |todo|}}
+  {{todo-item model=todo dynamic=(action "deleteItem") check=(action "checkItem") edit=(action "editItem") update=(action "updateItem")}}
+{{/each}}
+</ul>

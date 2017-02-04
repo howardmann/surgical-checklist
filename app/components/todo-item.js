@@ -8,6 +8,12 @@ export default Ember.Component.extend({
     },
     check(value){
       this.attrs.check(value);
+    },
+    edit(value){
+      this.attrs.edit(value);
+    },
+    update(value){
+      this.attrs.update(value);
     }
   }
 });

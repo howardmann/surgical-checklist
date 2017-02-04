@@ -3,14 +3,8 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   actions: {
     addItem(value){
-      // let id = this.get('allItems').length + 1;
-      // let item = {id: id, title: value, isComplete: false};
-      // this.get('allItems').pushObject(item);
-      // // Clear form
-      // $('input[type="text"]').val('');
-
-      // Return if blank
-      if (!value.trim()){ return; }
+      // Return and reset if blank
+      if (!value || !value.trim()){ return this.set('newItem', ''); }
       // Create new record and save
       let newTodo = this.store.createRecord('todo',{
         title: value,
@@ -25,19 +19,16 @@ export default Ember.Controller.extend({
     },
     checkItem(item){
       item.toggleProperty('isComplete');
+    },
+    editItem(item){
+      item.toggleProperty('isEdit');
+    },
+    updateItem(item){
+      // Reset and return if blank
+      if (!item.get('title') || !item.get('title').trim()){ return ; }
+      // Turn edit property off and then persist the update
+      item.toggleProperty('isEdit');
+      item.save();
     }
   }
 });
-
-
-// var title = this.get('newTitle');
-// if (!title.trim()) { return; }
-//
-// var todo = this.store.createRecord('todo', {
-//   title: title,
-//   isCompleted: false
-// });
-//
-// this.set('newTitle', '');
-//
-// todo.save();

@@ -14,7 +14,7 @@ export default Ember.Component.extend({
   location: '',
 
   actions: {
-    updateText() {
+    updateLocation() {
       this.set('item.location', this.get('location'));
       this.get('auditStore').preserveCurrent();
     }

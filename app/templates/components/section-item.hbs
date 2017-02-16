@@ -1,4 +1,11 @@
-<p>{{section.title}}</p>
+<div class="row">
+  <div class="col col-12 section flex-valign">
+    <h2>{{section.title}}</h2>
+  </div>
+</div>
+
 {{#each section.subItems as |item|}}
-  {{generic-item item=item audit=audit}}
+  <div class="col col-12 question-card">
+    {{generic-item item=item audit=audit}}
+  </div>
 {{/each}}

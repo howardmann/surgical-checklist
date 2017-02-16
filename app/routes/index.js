@@ -34,10 +34,26 @@ const Item = Ember.Object.extend({
     this._super(...arguments);
   },
 
+  smartfieldCheck(subItem) {
+    if (subItem.type !== 'smartfield') {
+      return true;
+    }
+
+    if (this.get('type') === 'checkbox') {
+      const checkedValue = '4e671f40-e4ff-11e1-aff1-0800200c9a66';
+      // TODO finishup
+      return subItem.options.condition === checkedValue;
+    }
+
+    return true;
+  },
+
   subItems: Ember.computed('item', 'audit.items', function () {
     const item = this.get('item');
     return this.get('audit.items')
-      .filter(i => i.parent_id === item.item_id)
+      .filter(i => {
+        return i.parent_id === item.item_id && this.smartfieldCheck(i);
+      })
       .map(item => Item.create({item, audit: this.get('audit')}));
   }),
 

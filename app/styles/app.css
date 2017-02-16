@@ -140,11 +140,66 @@ a {
   justify-content: center;
 }
 
+/* FLEXBOX */
+.flex {
+  display: flex;
+}
+.flex:after {
+  content: none;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-space-between {
+  justify-content: space-between;
+}
+
+.flex-space-around {
+  justify-content: space-around;
+}
+.flex-order {
+  order: 0;
+}
+.flex-order-1 {
+  order: 0;
+}
+
+.flex-order-2 {
+  order: 1;
+}
+
+.flex-order-3 {
+  order: 2;
+}
+
+.flex-order-4 {
+  order: 3;
+}
+
+.flex-order-5 {
+  order: 4;
+}
+
+.flex-order-6 {
+  order: 5;
+}
+
 /* CUSTOM LAYOUTS GO HERE */
 header {
   background-color: #2A94E5;
   padding: 0px 20px;
 }
+
 .heading {
   font-weight: 400;
   color: white;
@@ -152,6 +207,7 @@ header {
 }
 .logo {
   width: 45px;
+  display: inline-block;
 }
 p.description {
   font-size: 16px;
@@ -217,13 +273,17 @@ button.no.active {
   background: #FC1125;
   color: #FFFFFF;
 }
-button.history {
+.history {
   color: #FFFFFF;
   background: none;
+  text-align: center;
   border: 1px solid white;
   height: 40px;
   padding: 0px;
-  margin-top: 20%;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor:pointer;
 }
 .question-card .col {
   padding-right: 10px;
@@ -253,6 +313,18 @@ button.history {
   background: #2A94E5;
   color: white;
 }
+.redirect-signup {
+  padding: 0px 20px;
+  margin-bottom: 50px;
+}
+.redirect-signup a {
+  text-decoration: none;
+}
+.redirect-signup p{
+  display: inline-block;
+  font-size: 20px;
+  color: #2A94E5;
+}
 /* HISTORY PAGE */
 .history-banner {
   border: 1px solid #E1E1E1;
@@ -264,9 +336,6 @@ button.history {
   font-weight: 400;
   color: #484848;
   line-height: 30px;
-}
-.history-body {
-  min-height: calc(100vh - 55px);
 }
 .history-section {
   font-size: 12px;
@@ -282,17 +351,14 @@ button.history {
   border: 1px solid #EBEBEB;
   cursor: pointer;
 }
-.card-history:hover {
-  background-color: #EBEBEB;
-}
 .history-title {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   color: rgba(0,0,0,0.80);
   line-height: 19px;
 }
 .history-last-edit {
-  font-weight: 600;
+  font-weight: 500;
   color: rgba(0,0,0,0.40);
 }
 .history-status-complete {
@@ -304,6 +370,9 @@ button.history {
 .new-checklist-banner {
   background-color: #2A94E5;
   padding: 0px 20px;
+  position: fixed;
+  bottom: 0px;
+  z-index: 2;
 }
 .new-checklist-banner .sub-heading {
   font-size: 14px;

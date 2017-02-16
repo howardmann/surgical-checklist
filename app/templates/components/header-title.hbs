@@ -1,11 +1,11 @@
-<header class="flex-valign">
+<header>
   <div class="row">
     <div class="col col-9">
       <h1 class="heading">{{model.title}}</h1>
     </div>
-    <div class="col col-3">
+    <div class="col col-3 right ">
     {{#if showHistoryButton}}
-      <button class="history" {{action "showSavedAudits"}}> History</button>
+      <h1 class="history flex-column flex-center" {{action "showSavedAudits"}}> History</h1>
     {{/if}}
     </div>
   </div>

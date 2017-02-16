@@ -1,18 +1,56 @@
-{{header-title model=audit}}
-
-{{audit-description model=audit}}
-
-{{section-item section=audit.headerSection audit=audit}}
-
-{{section-list sections=audit.sections audit=audit}}
+{{header-title model=audit}} {{audit-description model=audit}} {{section-item section=audit.headerSection audit=audit}} {{section-list sections=audit.sections audit=audit}}
 
 
-<div class="row">
-  <div class="col col-12">
-    <div class="submit">
-      <button {{action "finishAudit"}}>
-        Save & Finish
-      </button>
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <div class="submit">
+        <button {{action "finishAudit"}}>
+          Save & Finish
+        </button>
+      </div>
     </div>
   </div>
 </div>
+
+<a href="https://safetyculture.com/" target="_blank">
+  <div class="container redirect-signup">
+    <div class="row">
+      <div class="col col-12 flex-column flex-center">
+        <div class="logo">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 178.8 178.8" style="enable-background:new 0 0 178.8 178.8;" xml:space="preserve">
+            <style type="text/css">
+              .st0 {
+                fill: #4090CE;
+              }
+
+              .st1 {
+                fill: #FFFFFF;
+              }
+
+              .st2 {
+                fill: #84BEE7;
+              }
+
+              .st3 {
+                fill: #66ACDF;
+              }
+            </style>
+            <circle class="st0" cx="89.4" cy="89.4" r="89.4" />
+            <circle class="st1" cx="89.4" cy="89.4" r="79" />
+            <g>
+              <path class="st2" d="M136.7,56.6c-6.3-6.3-16.5-6.3-22.8,0l-36,36l-13-13c-6.3-6.3-16.5-6.3-22.8,0s-6.3,16.5,0,22.8l24.4,24.4
+                c6.3,6.3,16.5,6.3,22.8,0l0,0l0,0l47.4-47.4C143,73.1,143,62.9,136.7,56.6z" />
+              <g>
+                <path class="st0" d="M77.9,92.6L77.9,92.6L77.9,92.6L55,115.4l11.4,11.4c5.9,5.9,15.3,6.3,21.6,1.1c0.4-0.3,0.8-0.7,1.2-1.1l0,0
+                  l11.4-11.4L77.9,92.6z" />
+              </g>
+              <polygon class="st3" points="77.9,92.6 77.9,92.6 100.7,115.4 102.6,113.5 83.7,86.8 77.9,92.6 77.9,92.6 	" />
+            </g>
+          </svg>
+        </div>
+        <p>Powered by SafetyCulture</p>
+      </div>
+    </div>
+  </div>
+</a>

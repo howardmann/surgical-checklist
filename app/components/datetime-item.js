@@ -6,10 +6,10 @@ export default Ember.Component.extend({
 
     const stringDatetime = this.get('item.datetime');
     if (stringDatetime) {
-      this.set('prettyDatetime', new Date(stringDatetime).toUTCString());
+      this.set('prettyDatetime', new Date(stringDatetime).toLocaleString());
     } else {
       const datetime = new Date();
-      this.set('prettyDatetime', datetime.toUTCString());
+      this.set('prettyDatetime', datetime.toLocaleString());
       this.set('item.datetime', datetime.toISOString());
       this.get('auditStore').preserveCurrent();
     }

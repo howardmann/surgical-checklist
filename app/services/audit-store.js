@@ -29,7 +29,6 @@ export default Ember.Service.extend({
   },
 
   saveCurrentAuditToDatabase() {
-    this.get('currentAudit').markComplete();
     localStorage.setItem(
       this.get('currentAudit.id'),
       JSON.stringify(this.get('currentAudit').serialize())

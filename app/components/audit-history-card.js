@@ -10,7 +10,7 @@ export default Ember.Component.extend({
 
   lastEdit: Ember.computed('audit.lastEdit', function () {
     const lastEditString = this.get('audit.lastEdit');
-    return new Date(lastEditString).toUTCString();
+    return new Date(lastEditString).toLocaleString();
   }),
 
   complete: Ember.computed.alias('audit.isComplete'),

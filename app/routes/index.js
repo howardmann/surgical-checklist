@@ -1,18 +1,52 @@
 import Ember from 'ember';
 import plTemplate from '../template';
 
+const Response = Ember.Object.extend({});
+
+const ResponseSet = Ember.Object.extend({
+  init() {
+    this._super(...arguments);
+  },
+
+  responses: Ember.computed('responseSet', function () {
+    return this.get('responseSet.responses').map(resp => {
+      return Response.create(resp);
+    });
+  })
+});
+
+const ItemOptions = Ember.Object.extend({
+  init() {
+    this._super(...arguments);
+  },
+
+  responseSet: Ember.computed('options', function () {
+    const setId = this.get('options.response_set');
+    return ResponseSet.create({
+        responseSet: this.get('audit').getResponseSet(setId)
+      }
+    );
+  })
+});
+
 const Item = Ember.Object.extend({
   init() {
     this._super(...arguments);
-
-    const item = this.get('item');
-    const allItems = this.get('allItems');
-    this.set('subItems',
-      allItems
-      .filter(i => i.parent_id === item.item_id)
-      .map(item => Item.create({item, allItems}))
-    );
   },
+
+  subItems: Ember.computed('item', 'audit.items', function () {
+    const item = this.get('item');
+    return this.get('audit.items')
+      .filter(i => i.parent_id === item.item_id)
+      .map(item => Item.create({item, audit: this.get('audit')}));
+  }),
+
+  options: Ember.computed('item', function () {
+    return ItemOptions.create({
+      options: this.get('item.options'),
+      audit: this.get('audit')
+    });
+  }),
 
   title: Ember.computed.alias('item.label'),
   type: Ember.computed.alias('item.type')
@@ -23,14 +57,20 @@ const Audit = Ember.Object.extend({
     this._super(...arguments);
   },
 
-  title: Ember.computed.alias('name'),
-  description: Ember.computed.alias('template_data.metadata.description'),
+  getResponseSet(id) {
+    return this.get(`audit.template_data.response_sets.${id}`);
+  },
 
-  sections: Ember.computed('items', function() {
-    const allItems = this.get('items');
-    return allItems
+  items: Ember.computed.alias('audit.items'),
+  title: Ember.computed.alias('audit.name'),
+  description: Ember.computed.alias(
+    'audit.template_data.metadata.description'
+  ),
+
+  sections: Ember.computed('audit.items', function () {
+    return this.get('audit.items')
       .filter(i => i.type === 'section')
-      .map(item => Item.create({item, allItems}));
+      .map(item => Item.create({item, audit: this}));
   })
 });
 
@@ -54,6 +94,6 @@ export default Ember.Route.extend({
 
   },
   model(){
-    return Audit.create(plTemplate);
+    return Audit.create({audit: plTemplate});
   }
 });

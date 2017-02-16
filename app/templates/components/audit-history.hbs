@@ -6,8 +6,8 @@
   </div>
 </div>
 
-{{#each history.audits as |audit|}}
-  {{audit-history-card audit=audit}}
+{{#each auditHistoryDays as |oneDay|}}
+  {{audit-history-day day=oneDay.day audits=oneDay.audits}}
 {{/each}}
 
 <div class="new-checklist-banner flex-valign">

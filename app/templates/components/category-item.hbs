@@ -1,0 +1,6 @@
+<div class="container">
+  <p>{{item.title}}</p>
+  {{#each item.subItems as |item|}}
+    {{generic-item item=item}}
+  {{/each}}
+</div>

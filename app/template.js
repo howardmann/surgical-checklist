@@ -1,4 +1,4 @@
-{
+const template = {
   "header": [
     {
       "parent_id": "",
@@ -855,4 +855,6 @@
   "name": "World Health Organization Surgical Safety Checklist",
   "_id": "template_4A2F5535DE4F4913924760E0F68C3D79",
   "libraryId": "template_4A2F5535DE4F4913924760E0F68C3D79"
-}
+};
+
+export default template;

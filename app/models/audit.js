@@ -20,6 +20,8 @@ const Audit = Ember.Object.extend({
 
     const auditPojo = this.get('audit');
 
+    auditPojo.modified_at = new Date().toISOString();
+
     const sections = this.get('sections');
     const allItems = toFlat(sections);
     const serializedItems = allItems.map(i => i.serialize());
@@ -43,6 +45,18 @@ const Audit = Ember.Object.extend({
     return this.get(`audit.template_data.response_sets.${id}`);
   },
 
+  markComplete() {
+    const auditPojo = this.get('audit');
+    auditPojo.audit_data.date_completed = new Date().toISOString();
+  },
+
+  isComplete: Ember.computed(
+    'audit.audit_data.date_completed',
+    function () {
+      return !!this.get('audit.audit_data.date_completed');
+    }
+  ),
+
   id: Ember.computed.alias('audit._id'),
   items: Ember.computed.alias('audit.items'),
   header: Ember.computed.alias('audit.header'),
@@ -50,6 +64,7 @@ const Audit = Ember.Object.extend({
   description: Ember.computed.alias(
     'audit.template_data.metadata.description'
   ),
+  lastEdit: Ember.computed.alias('audit.modified_at'),
 
   headerSection: Ember.computed('audit.header', function () {
     const item = this.get('audit.header').find(i => i.type === 'section');
@@ -68,6 +83,20 @@ const Audit = Ember.Object.extend({
         audit: this,
         items: this.get('audit.items')
       }));
+  }),
+
+  getHeaderResponseById(id) {
+    return this.get('headerSection.subItems')
+      .find(i => i.get('id') === id)
+      .get('text');
+  },
+
+  patientName: Ember.computed('audit', function () {
+    return this.getHeaderResponseById('f3245d41-ea77-11e1-aff1-0800200c9a66');
+  }),
+
+  typeOfSurgery: Ember.computed('audit', function () {
+    return this.getHeaderResponseById('f3245d40-ea77-11e1-aff1-0800200c9a66');
   })
 });
 
@@ -85,6 +114,10 @@ Audit._newAudit = function (template) {
   const audit = JSON.parse(JSON.stringify(template)); // POJO
 
   audit._id = `audit_${guid()}`;
+
+  audit.audit_data = {
+    date_started: new Date().toISOString()
+  };
 
   return audit;
 };

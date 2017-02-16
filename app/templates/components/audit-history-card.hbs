@@ -1,5 +1,11 @@
 <div class="container" {{action 'openAudit'}}>
 
-  {{audit.title}}
+  <div>{{title}}</div>
+  <div>Last edit: {{lastEdit}}</div>
+  {{#if complete}}
+    <div>Complete</div>
+  {{else}}
+    <div>Incomplete</div>
+  {{/if}}
 
 </div>

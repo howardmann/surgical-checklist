@@ -17,6 +17,7 @@ export default Ember.Component.extend({
 
   actions: {
     finishAudit() {
+      this.get('audit').markComplete();
       this.get('auditStore').saveCurrentAuditToDatabase();
       this.get('router').transitionTo('history');
     }

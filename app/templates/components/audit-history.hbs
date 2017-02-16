@@ -1,7 +1,7 @@
 <h1>History of Surgeries</h1>
 
-{{#each history.audits as |audit|}}
-  {{audit-history-card audit=audit}}
+{{#each auditHistoryDays as |oneDay|}}
+  {{audit-history-day day=oneDay.day audits=oneDay.audits}}
 {{/each}}
 
 <p>{{templateTitle}}</p>

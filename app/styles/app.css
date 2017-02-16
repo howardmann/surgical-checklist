@@ -161,7 +161,13 @@ p.description {
 .question-card {
   background: white;
   margin-bottom: 7px;
-  padding: 15px 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: rgba(0,0,0,0.80);
+  line-height: 22px;
+}
+.question-card p {
+  margin-bottom: 20px;
 }
 input {
   background: #F1F6F8;
@@ -171,17 +177,21 @@ input {
   width: 60%;
 }
 button {
-  background: #D8D8D8;
+  background: #F1F6F8;
   border-radius: 4px;
-  font-size: 14px;
-  color: #565656;
+  font-size: 16px;
+  font-weight: 600;
+  color: #484848;
   border: none;
   padding: 8px 29px;
   outline: none;
   width: 100%;
   display: block;
   margin: 6px 0px;
+  min-height: 45px;
   cursor: pointer;
+  letter-spacing: 0;
+
 }
 button.sign-up {
   background: #3AC097;
@@ -212,8 +222,8 @@ button.history {
 .section {
   background: #FAFAFA;
   color: rgba(0,0,0,0.80);
-  box-shadow: 0 -1px 0 0 #EBEBEB, 0 1px 0 0 #EBEBEB;
   padding: 15px 20px;
+  border: 1px solid #EBEBEB;
 }
 
 .section h2 {

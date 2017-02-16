@@ -35,6 +35,7 @@ const Audit = Ember.Object.extend({
     return this.get(`audit.template_data.response_sets.${id}`);
   },
 
+  id: Ember.computed.alias('audit._id'),
   items: Ember.computed.alias('audit.items'),
   title: Ember.computed.alias('audit.name'),
   description: Ember.computed.alias(

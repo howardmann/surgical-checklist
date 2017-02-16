@@ -26,5 +26,12 @@ export default Ember.Service.extend({
       '_currentAudit',
       JSON.stringify(this.get('currentAudit').serialize())
     );
+  },
+
+  saveAudit(audit) {
+    localStorage.setItem(
+      audit.get('id'),
+      JSON.stringify(audit.serialize())
+    );
   }
 });

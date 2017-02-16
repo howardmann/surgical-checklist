@@ -10,7 +10,6 @@ html, body {
   margin: 0px;
   background: white;
   color: #565656;
-  padding-bottom: 50px;
 }
 
 p {
@@ -250,12 +249,49 @@ button.history {
 .history-banner {
   border: 1px solid #E1E1E1;
   padding: 0px 20px;
+  height: 60px;
 }
 .history-banner h1 {
   font-size: 24px;
   font-weight: 400;
   color: #484848;
   line-height: 30px;
+}
+.history-body {
+  min-height: calc(100vh - 55px);
+}
+.history-section {
+  font-size: 12px;
+  color: rgba(0,0,0,0.40);
+  background: #F5F5F5;
+  padding: 0px 20px;
+}
+.history-section p {
+  margin: 4px 0px;
+}
+.card-history {
+  padding: 0px 20px;
+  border: 1px solid #EBEBEB;
+  cursor: pointer;
+}
+.card-history:hover {
+  background-color: #EBEBEB;
+}
+.history-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(0,0,0,0.80);
+  line-height: 19px;
+}
+.history-last-edit {
+  font-weight: 600;
+  color: rgba(0,0,0,0.40);
+}
+.history-status-complete {
+  color: rgba(0,0,0,0.40);
+}
+.history-status-incomplete {
+  color: #F75856;
 }
 .new-checklist-banner {
   background-color: #2A94E5;

@@ -1,11 +1,10 @@
-<div class="container" {{action 'openAudit'}}>
-
-  <div>{{title}}</div>
-  <div>Last edit: {{lastEdit}}</div>
+<div class="card-history" {{action 'openAudit'}}>
+  <p class="history-title">{{title}}</p>
+  <p class="history-last-edit">Last edit: {{lastEdit}}</p>
   {{#if complete}}
-    <div>Complete</div>
+    <p class="history-status-complete">Complete</p>
   {{else}}
-    <div>Incomplete</div>
+    <p class="history-status-incomplete">Incomplete</p>
   {{/if}}
 
 </div>

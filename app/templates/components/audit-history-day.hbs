@@ -1,4 +1,8 @@
-<div>{{day}}</div>
+<div class="row history-section">
+  <div class="col col-12">
+    <p>{{day}}</p>
+  </div>
+</div>
 
 {{#each audits as |audit|}}
   {{audit-history-card audit=audit}}

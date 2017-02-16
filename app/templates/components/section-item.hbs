@@ -4,8 +4,10 @@
   </div>
 </div>
 
-{{#each section.subItems as |item|}}
-  <div class="col col-12 question-card">
-    {{generic-item item=item audit=audit}}
-  </div>
-{{/each}}
+<div class="container">
+  {{#each section.subItems as |item|}}
+    <div class="col col-12 question-card">
+      {{generic-item item=item audit=audit}}
+    </div>
+  {{/each}}
+</div>

@@ -191,7 +191,6 @@ button {
   min-height: 45px;
   cursor: pointer;
   letter-spacing: 0;
-
 }
 button.sign-up {
   background: #3AC097;
@@ -212,6 +211,9 @@ button.history {
   height: 40px;
   padding: 0px;
   margin-top: 20%;
+}
+.question-card .col {
+  padding-right: 10px;
 }
 .who-logo {
   width: 170px;

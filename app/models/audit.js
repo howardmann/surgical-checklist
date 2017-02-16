@@ -18,13 +18,21 @@ const Audit = Ember.Object.extend({
       return all;
     }
 
+    const auditPojo = this.get('audit');
+
     const sections = this.get('sections');
     const allItems = toFlat(sections);
-
     const serializedItems = allItems.map(i => i.serialize());
-    const auditPojo = this.get('audit');
     auditPojo.items.forEach(pojoItem => {
       const serItem = serializedItems.find(i => i.id === pojoItem.item_id);
+      pojoItem.responses = serItem.responses;
+    });
+
+    const headerSection = this.get('headerSection');
+    const allHeaderItems = toFlat([headerSection]);
+    const serializedHeaderItems = allHeaderItems.map(i => i.serialize());
+    auditPojo.header.forEach(pojoItem => {
+      const serItem = serializedHeaderItems.find(i => i.id === pojoItem.item_id);
       pojoItem.responses = serItem.responses;
     });
 

@@ -43,5 +43,10 @@ export default Ember.Service.extend({
       }
     }
     return allSavedAudits.map(a => Audit.createFromAudit(a));
+  },
+
+  restoreAudit(audit) {
+    this.set('currentAudit', audit);
+    this.preserveCurrent();
   }
 });

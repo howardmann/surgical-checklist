@@ -1,7 +1,12 @@
 import Ember from 'ember';
 import plTemplate from '../template';
 
-const Response = Ember.Object.extend({});
+const Response = Ember.Object.extend({
+  selected: false,
+  id: Ember.computed.alias('response.id'),
+  label: Ember.computed.alias('response.label'),
+  colour: Ember.computed.alias('response.colour')
+});
 
 const ResponseSet = Ember.Object.extend({
   init() {
@@ -9,8 +14,8 @@ const ResponseSet = Ember.Object.extend({
   },
 
   responses: Ember.computed('responseSet', function () {
-    return this.get('responseSet.responses').map(resp => {
-      return Response.create(resp);
+    return this.get('responseSet.responses').map(response => {
+      return Response.create({response});
     });
   })
 });

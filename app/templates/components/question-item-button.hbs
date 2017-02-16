@@ -1,0 +1,7 @@
+<button {{action "toggle"}}
+  style="
+    background-color: rgb({{if response.selected response.colour}});
+    color: {{if response.selected "white"}}
+    ">
+  {{response.label}}
+</button>

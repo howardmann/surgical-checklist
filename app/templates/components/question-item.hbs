@@ -1,4 +1,6 @@
 {{item.title}}
-{{#each buttons as |button|}}
-  <button>{{button.label}}</button>
+{{#each responses as |response|}}
+  {{question-item-button
+    response=response
+    toggle=(action "toggle")}}
 {{/each}}

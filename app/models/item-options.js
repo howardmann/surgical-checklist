@@ -19,21 +19,21 @@ const ItemOptions = Ember.Object.extend({
   },
 
   serializeResponses() {
-    let response = [];
+    const responses = {};
+
     const responseSet = this.get('responseSet');
     if (responseSet) {
-      response = responseSet.get('responses')
+      let response = responseSet.get('responses')
         .filter(resp => {
           return resp.get('selected');
         })
         .map(resp => {
           return resp.get('id');
         });
+      responses.response = response;
     }
 
-    return {
-      response
-    };
+    return responses;
   }
 });
 

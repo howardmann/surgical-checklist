@@ -20,13 +20,21 @@ const Item = Ember.Object.extend({
       item: this
     });
     this.set('options', options);
+
+    this.set('text', this.get('item.responses.text'));
   },
 
   serialize() {
-    return {
+    const itemSer = {
       id: this.get('item.item_id'),
       responses: this.get('options').serializeResponses()
     };
+
+    if (this.get('type') === 'text') {
+      itemSer.responses.text = this.get('text') || '';
+    }
+
+    return itemSer;
   },
 
   smartfieldCheck(subItem) {
@@ -45,7 +53,8 @@ const Item = Ember.Object.extend({
 
   title: Ember.computed.alias('item.label'),
   type: Ember.computed.alias('item.type'),
-  id: Ember.computed.alias('item.item_id')
+  id: Ember.computed.alias('item.item_id'),
+  text: ''
 });
 
 export default Item;

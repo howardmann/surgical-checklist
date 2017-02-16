@@ -174,157 +174,6 @@ const template = {
     },
     {
       "parent_id": "CC9CB0AC-34A2-4A73-8D30-71996F9C63B7",
-      "label": "Anticipated Critical Events",
-      "options": {},
-      "type": "category",
-      "item_id": "25B960D0-5F31-407E-AF12-07984D93122B"
-    },
-    {
-      "parent_id": "25B960D0-5F31-407E-AF12-07984D93122B",
-      "label": "To Surgeon:",
-      "options": {
-        "visible_in_report": true,
-        "visible_in_audit": true
-      },
-      "type": "information",
-      "item_id": "869C6A93-F00F-43B6-ADBA-094E198072B5"
-    },
-    {
-      "parent_id": "869C6A93-F00F-43B6-ADBA-094E198072B5",
-      "label": "What are the critical or non-routine steps? ",
-      "options": {},
-      "type": "checkbox",
-      "item_id": "80BB8B3A-219E-43A7-8743-65C37681B115"
-    },
-    {
-      "parent_id": "80BB8B3A-219E-43A7-8743-65C37681B115",
-      "label": "",
-      "options": {
-        "condition": "4e671f40-e4ff-11e1-aff1-0800200c9a66",
-        "values": []
-      },
-      "type": "smartfield",
-      "item_id": "1F88B9E4-EAE6-4CAF-BC51-12DD5954215D"
-    },
-    {
-      "parent_id": "1F88B9E4-EAE6-4CAF-BC51-12DD5954215D",
-      "label": "List critical or non-routine steps",
-      "options": {
-        "visible_in_report": true,
-        "visible_in_audit": true
-      },
-      "type": "information",
-      "item_id": "188D1A7F-3624-4157-9502-19B66A4FE1B6"
-    },
-    {
-      "parent_id": "1F88B9E4-EAE6-4CAF-BC51-12DD5954215D",
-      "label": "",
-      "options": {
-        "is_mandatory": false
-      },
-      "type": "text",
-      "item_id": "B4904822-C19B-4D8B-A401-2C04BD599A3D"
-    },
-    {
-      "parent_id": "869C6A93-F00F-43B6-ADBA-094E198072B5",
-      "label": "",
-      "options": {
-        "visible_in_report": true,
-        "visible_in_audit": true
-      },
-      "type": "information",
-      "item_id": "C63A8A64-17E3-4387-9C50-A541A3B748F8"
-    },
-    {
-      "parent_id": "869C6A93-F00F-43B6-ADBA-094E198072B5",
-      "label": "How long will the case take?",
-      "options": {},
-      "type": "checkbox",
-      "item_id": "5A239108-6A31-4E2A-A9FF-3D2BAE79755A"
-    },
-    {
-      "parent_id": "5A239108-6A31-4E2A-A9FF-3D2BAE79755A",
-      "label": "",
-      "options": {
-        "condition": "4e671f40-e4ff-11e1-aff1-0800200c9a66",
-        "values": []
-      },
-      "type": "smartfield",
-      "item_id": "E38FB4F9-2A7B-4C61-9C1B-58AF497519E2"
-    },
-    {
-      "parent_id": "E38FB4F9-2A7B-4C61-9C1B-58AF497519E2",
-      "label": "Include estimated time",
-      "options": {
-        "visible_in_report": true,
-        "visible_in_audit": true
-      },
-      "type": "information",
-      "item_id": "94AAFEE4-3240-4DCA-AE5C-3BDD9CA2C631"
-    },
-    {
-      "parent_id": "E38FB4F9-2A7B-4C61-9C1B-58AF497519E2",
-      "label": "",
-      "options": {},
-      "type": "text",
-      "item_id": "954695F5-2F4B-45AC-916A-E77B45DE5AA3"
-    },
-    {
-      "parent_id": "869C6A93-F00F-43B6-ADBA-094E198072B5",
-      "label": "",
-      "options": {
-        "visible_in_report": true,
-        "visible_in_audit": true
-      },
-      "type": "information",
-      "item_id": "B5D6408F-1C59-4EFE-8FF7-977E0923D38F"
-    },
-    {
-      "parent_id": "869C6A93-F00F-43B6-ADBA-094E198072B5",
-      "label": "What is the anticipated blood loss?",
-      "options": {},
-      "type": "checkbox",
-      "item_id": "492E0BB2-3572-4098-A941-A4E70A69587B"
-    },
-    {
-      "parent_id": "492E0BB2-3572-4098-A941-A4E70A69587B",
-      "label": "",
-      "options": {
-        "condition": "4e671f40-e4ff-11e1-aff1-0800200c9a66",
-        "values": []
-      },
-      "type": "smartfield",
-      "item_id": "5EF75037-7FC6-4264-AB89-903B4F81C257"
-    },
-    {
-      "parent_id": "5EF75037-7FC6-4264-AB89-903B4F81C257",
-      "label": "Include blood loss estimate ",
-      "options": {
-        "visible_in_report": true,
-        "visible_in_audit": true
-      },
-      "type": "information",
-      "item_id": "79861585-6EED-40E3-B225-CAA8437FB3C7"
-    },
-    {
-      "parent_id": "5EF75037-7FC6-4264-AB89-903B4F81C257",
-      "label": "",
-      "options": {},
-      "type": "text",
-      "item_id": "EB130F1C-DBD1-497C-B557-0A5EBA2366DC"
-    },
-    {
-      "parent_id": "CC9CB0AC-34A2-4A73-8D30-71996F9C63B7",
-      "label": "",
-      "options": {
-        "visible_in_report": true,
-        "visible_in_audit": true
-      },
-      "type": "information",
-      "item_id": "CD4FB7C0-41C6-40EA-9A61-45BD63B32274"
-    },
-    {
-      "parent_id": "CC9CB0AC-34A2-4A73-8D30-71996F9C63B7",
       "label": "To Anaesthetist:",
       "options": {
         "visible_in_report": true,
@@ -341,16 +190,6 @@ const template = {
       },
       "type": "question",
       "item_id": "FD802B6B-C817-4EF5-A0F2-10900E315E23"
-    },
-    {
-      "parent_id": "CC9CB0AC-34A2-4A73-8D30-71996F9C63B7",
-      "label": "",
-      "options": {
-        "visible_in_report": true,
-        "visible_in_audit": true
-      },
-      "type": "information",
-      "item_id": "2D0B6C0E-18D6-4977-AEFC-09A6A247725F"
     },
     {
       "parent_id": "CC9CB0AC-34A2-4A73-8D30-71996F9C63B7",
@@ -379,45 +218,6 @@ const template = {
       },
       "type": "question",
       "item_id": "6F3C8310-6C2F-4915-B13E-83F813C45332"
-    },
-    {
-      "parent_id": "6F3C8310-6C2F-4915-B13E-83F813C45332",
-      "label": "",
-      "options": {
-        "condition": "3f206182-e4f6-11e1-aff1-0800200c9a66",
-        "values": [
-          "8bcfbf00-e11b-11e1-9b23-0800200c9a66"
-        ]
-      },
-      "type": "smartfield",
-      "item_id": "65133B41-CCED-4736-B93E-0705F150116D"
-    },
-    {
-      "parent_id": "65133B41-CCED-4736-B93E-0705F150116D",
-      "label": "List concerns",
-      "options": {
-        "visible_in_report": true,
-        "visible_in_audit": true
-      },
-      "type": "information",
-      "item_id": "4FBEB783-B66A-49F7-8116-336B1781EDC8"
-    },
-    {
-      "parent_id": "65133B41-CCED-4736-B93E-0705F150116D",
-      "label": "",
-      "options": {},
-      "type": "text",
-      "item_id": "E39E9D87-AF92-4FD3-94FA-9809C5BA6D39"
-    },
-    {
-      "parent_id": "CC9CB0AC-34A2-4A73-8D30-71996F9C63B7",
-      "label": "",
-      "options": {
-        "visible_in_report": true,
-        "visible_in_audit": true
-      },
-      "type": "information",
-      "item_id": "F23E2B8A-3D95-4F96-9B83-0D30AF08E1ED"
     },
     {
       "parent_id": "CC9CB0AC-34A2-4A73-8D30-71996F9C63B7",
@@ -499,23 +299,6 @@ const template = {
       },
       "type": "question",
       "item_id": "B839C4D3-198F-41AC-BE59-AE1A535B8102"
-    },
-    {
-      "parent_id": "88A53348-B6F9-448D-84D1-D82B4C2A318C",
-      "label": "",
-      "options": {
-        "visible_in_report": true,
-        "visible_in_audit": true
-      },
-      "type": "information",
-      "item_id": "A5F8AE77-DDFA-4994-9A5E-E94056BB8D4C"
-    },
-    {
-      "parent_id": "88A53348-B6F9-448D-84D1-D82B4C2A318C",
-      "label": "Surgeons name and signature",
-      "options": {},
-      "type": "signature",
-      "item_id": "45DA8209-7443-4322-AA20-A71195DA4338"
     }
   ],
   "revision_key": "1E90D7E7-BF20-4BD8-9027-EBD1E1D8ACA0",
@@ -645,7 +428,8 @@ const template = {
       "subindustry": 2,
       "image": "447CE849-45DD-4258-B8B2-144EFFA3E517",
       "doc_no_suffix": "",
-      "description": "The WHO Surgical Safety Checklist was developed after extensive consultation aiming to decrease errors and adverse events, and increase teamwork and communication in surgery.<br/><br/>The surgical checklist has gone on to show significant reduction in both morbidity and mortality and is now used by a majority of surgical providers around the world. The checklist is not intended to be comprehensive. Additions and modifications to fit local practice are encouraged. ",
+      "description": "The WHO Surgical Safety Checklist was developed after extensive consult" +
+      "ation aiming to decrease errors and adverse events, and increase teamwork and communication in surgery.<br/><br/>The surgical checklist has gone on to show significant reduction in both morbidity and mortality and is now used by a majority of surgical providers around the world. The checklist is not intended to be comprehensive. Additions and modifications to fit local practice are encouraged. ",
       "industry": 10,
       "name": "World Health Organization Surgical Safety Checklist"
     }

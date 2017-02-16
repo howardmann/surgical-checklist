@@ -1,10 +1,24 @@
-<h1>History of Surgeries</h1>
+<div class="row">
+  <div class="col col-12">
+    <div class="history-banner">
+      <h1>My Surgeries</h1>
+    </div>    
+  </div>
+</div>
 
 {{#each history.audits as |audit|}}
   {{audit-history-card audit=audit}}
 {{/each}}
 
-<p>{{templateTitle}}</p>
-<button {{action "startNewAudit"}}>
-  New Surgery
-</button>
+<div class="new-checklist-banner flex-valign">
+  <div class="row">
+    <div class="col col-8">
+      <h1 class="sub-heading">{{templateTitle}}</h1>
+    </div>
+    <div class="col col-4">
+      <button class="new-checklist" {{action "startNewAudit"}}>
+        New Surgery
+      </button>
+    </div>
+  </div>
+</div>

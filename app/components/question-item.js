@@ -1,17 +1,23 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  responses: Ember.computed('item', function () {
-    return this.get('item.options.responseSet.responses');
-  }),
+  init() {
+    this._super(...arguments);
+
+    this.set('responses', this.get('item.options.responseSet.responses'));
+  },
+
+  auditStore: Ember.inject.service(),
 
   actions: {
-    toggle({responseId, value}) {
+    toggle({responseId}) {
       this.get('responses').forEach(resp => {
         if (resp.get('id') !== responseId) {
           resp.set('selected', false);
         }
       });
+
+      this.get('auditStore').preserveCurrent();
     }
   }
 });

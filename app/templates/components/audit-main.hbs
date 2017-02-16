@@ -1,4 +1,6 @@
-<button {{action "showSavedAudits"}}> &lt; </button>
+{{#if showHistoryButton}}
+  <button {{action "showSavedAudits"}}> &lt; </button>
+{{/if}}
 
 {{header-title model=audit}}
 

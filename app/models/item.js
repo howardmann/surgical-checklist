@@ -6,11 +6,15 @@ const Item = Ember.Object.extend({
     this._super(...arguments);
 
     const item = this.get('item');
-    const subItems = this.get('audit.items')
+    const subItems = this.get('items')
       .filter(i => {
         return i.parent_id === item.item_id && this.smartfieldCheck(i);
       })
-      .map(item => Item.create({item, audit: this.get('audit')}));
+      .map(item => Item.create({
+        item,
+        audit: this.get('audit'),
+        items: this.get('items')
+      }));
     this.set('subItems', subItems);
 
     const options = ItemOptions.create({
@@ -30,7 +34,7 @@ const Item = Ember.Object.extend({
       responses: this.get('options').serializeResponses()
     };
 
-    if (this.get('type') === 'text') {
+    if (this.get('type') === 'text' || this.get('type') === 'textsingle') {
       itemSer.responses.text = this.get('text') || '';
     }
 

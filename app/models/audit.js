@@ -37,15 +37,29 @@ const Audit = Ember.Object.extend({
 
   id: Ember.computed.alias('audit._id'),
   items: Ember.computed.alias('audit.items'),
+  header: Ember.computed.alias('audit.header'),
   title: Ember.computed.alias('audit.name'),
   description: Ember.computed.alias(
     'audit.template_data.metadata.description'
   ),
 
+  headerSection: Ember.computed('audit.header', function () {
+    const item = this.get('audit.header').find(i => i.type === 'section');
+    return Item.create({
+      item,
+      audit: this,
+      items: this.get('audit.header')
+    });
+  }),
+
   sections: Ember.computed('audit.items', function () {
     return this.get('audit.items')
       .filter(i => i.type === 'section')
-      .map(item => Item.create({item, audit: this}));
+      .map(item => Item.create({
+        item,
+        audit: this,
+        items: this.get('audit.items')
+      }));
   })
 });
 

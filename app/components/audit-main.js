@@ -11,6 +11,10 @@ export default Ember.Component.extend({
     return this.get('audit.sections');
   }),
 
+  headerSections: Ember.computed('audit', function () {
+    return this.get('audit.headerSections');
+  }),
+
   actions: {
     finishAudit() {
       this.get('auditStore').saveCurrentAuditToDatabase();

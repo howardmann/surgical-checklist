@@ -28,10 +28,10 @@ export default Ember.Service.extend({
     );
   },
 
-  saveAudit(audit) {
+  saveCurrentAuditToDatabase() {
     localStorage.setItem(
-      audit.get('id'),
-      JSON.stringify(audit.serialize())
+      this.get('currentAudit.id'),
+      JSON.stringify(this.get('currentAudit').serialize())
     );
   }
 });

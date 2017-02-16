@@ -56,8 +56,7 @@ function s4() {
 }
 
 function guid() {
-  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-    s4() + '-' + s4() + s4() + s4();
+  return s4() + s4() + s4() + s4() + s4() + s4() + s4() + s4();
 }
 
 Audit._newAudit = function (template) {
@@ -75,13 +74,5 @@ Audit.createFromTemplate = function (template) {
 Audit.createFromAudit = function (audit) {
   return Audit.create({audit});
 };
-
-// Audit.createFromSelectedItems = function (template, selectedItems) {
-//   var audit = Audit._newAudit(template);
-//   audit.items.some(i => {
-//     if (selectedItems.some(sel => sel.id === i.item_id))
-//   });
-//   return
-// };
 
 export default Audit;

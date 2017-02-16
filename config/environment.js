@@ -31,7 +31,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
     ENV.manifest = {
-      enabled: false,
+      enabled: true,
       appcacheFile: "/manifest.appcache",
       excludePaths: ['index.html', 'someother.html'],
       includePaths: ['/'],

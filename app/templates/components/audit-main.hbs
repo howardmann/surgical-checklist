@@ -1,6 +1,13 @@
 <div class="container">
   <h1>audit-main</h1>
-  {{audit-title model=model.template_data.metadata}}
 
-  {{section-list }}
+  {{#each model as |section|}}
+  <div class="row">
+    <div class="col col-12 section flex-valign">
+      <h3>{{section.title}}</h3>
+    </div>
+  </div>
+
+  {{/each}}
+
 </div>

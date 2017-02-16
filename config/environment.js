@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'ember-todo',
+    modulePrefix: 'surgical-checklist',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',

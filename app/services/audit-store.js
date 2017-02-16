@@ -33,5 +33,13 @@ export default Ember.Service.extend({
       this.get('currentAudit.id'),
       JSON.stringify(this.get('currentAudit').serialize())
     );
+  },
+
+  listAllSavedAudits() {
+    const allSavedAudits = {};
+    for (let key in localStorage) {
+      allSavedAudits[key] = localStorage[key];
+    }
+    return allSavedAudits;
   }
 });

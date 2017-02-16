@@ -1,7 +1,7 @@
 {
-  "name": "ember-todo",
+  "name": "surgical-checklist",
   "version": "0.0.0",
-  "description": "Small description for ember-todo goes here",
+  "description": "Surgical Checklist",
   "license": "MIT",
   "author": "",
   "directories": {

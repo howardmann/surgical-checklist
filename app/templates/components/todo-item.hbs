@@ -1,9 +1,0 @@
-{{#if model.isEdit}}
-  <form {{action 'update' model on="submit"}}>
-    {{input type="text" value=model.title}}
-    <input type="submit" value="Update">
-  </form>
-{{else}}
-  {{model.title}} | <a href="#" {{action 'delete' model}}>Delete</a> | <a href="#" {{action 'check' model}}>Complete</a> | <a href="#" {{action 'edit' model}}>Edit</a>
-  <br> isComplete: {{model.isComplete}} | isEdit: {{model.isEdit}}
-{{/if}}

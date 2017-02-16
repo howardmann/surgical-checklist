@@ -4,19 +4,18 @@ export default Ember.Component.extend({
   init() {
     this._super(...arguments);
 
-    if (this.get('item.datetime')) {
-      this.set('datetime', this.get('item.datetime'));
+    const stringDatetime = this.get('item.datetime');
+    if (stringDatetime) {
+      this.set('prettyDatetime', new Date(stringDatetime).toUTCString());
+    } else {
+      const datetime = new Date();
+      this.set('prettyDatetime', datetime.toUTCString());
+      this.set('item.datetime', datetime.toISOString());
+      this.get('auditStore').preserveCurrent();
     }
   },
 
   auditStore: Ember.inject.service(),
 
-  datetime: '',
-
-  actions: {
-    updateDatetime() {
-      this.set('item.datetime', this.get('datetime'));
-      this.get('auditStore').preserveCurrent();
-    }
-  }
+  prettyDatetime: ''
 });

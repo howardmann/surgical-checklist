@@ -26,6 +26,7 @@ const Item = Ember.Object.extend({
     this.set('options', options);
 
     this.set('text', this.get('item.responses.text'));
+    this.set('datetime', this.get('item.responses.datetime'));
   },
 
   serialize() {
@@ -36,6 +37,10 @@ const Item = Ember.Object.extend({
 
     if (this.get('type') === 'text' || this.get('type') === 'textsingle') {
       itemSer.responses.text = this.get('text') || '';
+    }
+
+    if (this.get('type') === 'datetime') {
+      itemSer.responses.datetime = this.get('datetime') || '';
     }
 
     return itemSer;
@@ -58,7 +63,8 @@ const Item = Ember.Object.extend({
   title: Ember.computed.alias('item.label'),
   type: Ember.computed.alias('item.type'),
   id: Ember.computed.alias('item.item_id'),
-  text: ''
+  text: '',
+  datetime: ''
 });
 
 export default Item;

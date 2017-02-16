@@ -1,1 +1,12 @@
-<h1>{{model.title}}</h1>
+<header class="flex-valign">
+  <div class="row">
+    <div class="col col-9">
+      <h1 class="heading">{{model.title}}</h1>
+    </div>
+    <div class="col col-3">
+    {{#if showHistoryButton}}
+      <button class="history" {{action "showSavedAudits"}}> History</button>
+    {{/if}}
+    </div>
+  </div>
+</header>

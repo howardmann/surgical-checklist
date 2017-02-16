@@ -8,14 +8,12 @@ export default Ember.Component.extend({
     this.set('showHistoryButton', show);
   },
   auditStore: Ember.inject.service(),
-  
+
   showHistoryButton: false,
 
   actions: {
     showSavedAudits() {
       this.get('router').transitionTo('history');
-      this.set('showHistoryButton', true);
     }
   }
-
 });

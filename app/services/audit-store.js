@@ -39,9 +39,9 @@ export default Ember.Service.extend({
     const allSavedAudits = [];
     for (let key in localStorage) {
       if (key.indexOf('audit_') === 0) {
-        allSavedAudits.push(localStorage[key]);
+        allSavedAudits.push(JSON.parse(localStorage[key]));
       }
     }
-    return allSavedAudits;
+    return allSavedAudits.map(a => Audit.createFromAudit(a));
   }
 });

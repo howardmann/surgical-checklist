@@ -1,0 +1,8 @@
+{{#each history.audits as |audit|}}
+  {{audit-history-card audit=audit}}
+{{/each}}
+
+<p>{{templateTitle}}</p>
+<button {{action "startNewAudit"}}>
+  New Surgery
+</button>

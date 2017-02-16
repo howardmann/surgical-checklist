@@ -4,6 +4,8 @@ export default Ember.Route.extend({
   auditStore: Ember.inject.service(),
 
   model(){
-    return this.get('auditStore').listAllSavedAudits();
+    return {
+      audits: this.get('auditStore').listAllSavedAudits()
+    };
   }
 });

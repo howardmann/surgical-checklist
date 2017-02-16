@@ -8,13 +8,14 @@ html, body {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   margin: 0px;
-  background: #F0F5F6;
+  background: white;
   color: #565656;
   padding-bottom: 50px;
 }
 
 p {
   margin: 10px 0px;
+  line-height: 22px;
 }
 a {
   text-decoration: none;
@@ -142,18 +143,19 @@ a {
 
 /* CUSTOM LAYOUTS GO HERE */
 header {
-  height: 100px;
   background-color: #2A94E5;
-  padding: 7px;
+  padding: 0px 20px;
 }
 .heading {
   font-weight: 400;
   color: white;
-  font-size: 22px;
-  padding-left: 20px;
+  font-size: 20px;
 }
 .logo {
   width: 45px;
+}
+p.description {
+  font-size: 16px;
 }
 .question-card {
   background: white;
@@ -197,10 +199,14 @@ button.history {
   background: none;
   border: 1px solid white;
   height: 40px;
-  margin-top: 20px;
+  padding: 0px;
+  margin-top: 20%;
 }
 .who-logo {
-  width: 150px;
+  width: 170px;
+}
+.card-description {
+  padding: 20px;
 }
 .section {
   background: #47A0E7;

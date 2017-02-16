@@ -844,7 +844,7 @@ const template = {
       "subindustry": 2,
       "image": "447CE849-45DD-4258-B8B2-144EFFA3E517",
       "doc_no_suffix": "",
-      "description": "The WHO Surgical Safety Checklist was developed after extensive consultation aiming to decrease errors and adverse events, and increase teamwork and communication in surgery. The surgical checklist has gone on to show significant reduction in both morbidity and mortality and is now used by a majority of surgical providers around the world. The checklist is not intended to be comprehensive. Additions and modifications to fit local practice are encouraged. ",
+      "description": "The WHO Surgical Safety Checklist was developed after extensive consultation aiming to decrease errors and adverse events, and increase teamwork and communication in surgery.<br/><br/>The surgical checklist has gone on to show significant reduction in both morbidity and mortality and is now used by a majority of surgical providers around the world. The checklist is not intended to be comprehensive. Additions and modifications to fit local practice are encouraged. ",
       "industry": 10,
       "name": "World Health Organization Surgical Safety Checklist"
     }

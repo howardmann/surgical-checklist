@@ -2,7 +2,7 @@ const template = {
   "header": [
     {
       "parent_id": "",
-      "label": "Title Page",
+      "label": "Patient Information",
       "options": {},
       "type": "section",
       "item_id": "60481281-E7F3-4EC3-8737-CED632C3C708"

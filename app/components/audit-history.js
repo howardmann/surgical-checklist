@@ -14,9 +14,24 @@ export default Ember.Component.extend({
       days[day] = days[day] || [];
       days[day].push(a);
     });
+
+    let todayDay = new Date();
+    let yesterdayDay = new Date(Date.now() - 86400000);
+    todayDay = todayDay.toISOString().substr(0, 10);
+    yesterdayDay = yesterdayDay.toISOString().substr(0, 10);
+    function humanizeDay(day) {
+      if (day === todayDay) {
+        return 'Today';
+      }
+      if (day === yesterdayDay) {
+        return 'Yesterday';
+      }
+      return new Date(day).toDateString();
+    }
+
     return Object.keys(days).map(day => {
       return {
-        day,
+        day: humanizeDay(day),
         audits: days[day]
       };
     });

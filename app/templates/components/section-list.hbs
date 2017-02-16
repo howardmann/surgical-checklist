@@ -1,7 +1,4 @@
-<div class="container">
-  <h3>section-list</h3>
-  <p>Count: {{model.length}}</p>
-  {{#each model as |section|}}
-    {{section-block model=section}}
-  {{/each}}
-</div>
+<h3>{{model.title}}</h3>
+{{#each model.items as |item|}}
+  {{question-item model=item}}
+{{/each}}

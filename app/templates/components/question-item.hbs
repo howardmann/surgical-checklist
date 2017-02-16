@@ -1,0 +1,10 @@
+<div class="row question-card">
+  <div class="col col-10">
+    <p>{{model.title}}</p>
+    <button class="yes {{if model.isYes "active" ""}}" {{action 'clickYes'}}>Yes | {{model.isYes}}</button>
+    <button class="no {{if model.isNo "active" ""}}" {{action 'clickNo'}}>No | {{model.isNo}}</button>
+
+  </div>
+  <div class="col col-2">
+  </div>
+</div>

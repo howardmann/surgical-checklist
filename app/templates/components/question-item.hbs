@@ -1,6 +1,8 @@
 <p>{{item.title}}</p>
 {{#each responses as |response|}}
+<div class="col col-6 sm-col-12">
   {{question-item-button
     response=response
     toggle=(action "toggle")}}
+</div>
 {{/each}}

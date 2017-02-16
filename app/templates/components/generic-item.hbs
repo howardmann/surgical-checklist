@@ -1,7 +1,5 @@
-<div class="container">
-  {{component itemComponentName item=item audit=audit}}
+{{component itemComponentName item=item audit=audit}}
 
-  {{#each item.subItems as |item|}}
-    {{generic-item item=item}}
-  {{/each}}
-</div>
+{{#each item.subItems as |item|}}
+  {{generic-item item=item}}
+{{/each}}

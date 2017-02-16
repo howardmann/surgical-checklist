@@ -20,7 +20,7 @@ const Audit = Ember.Object.extend({
 
     const auditPojo = this.get('audit');
 
-    auditPojo.modified_at = new Date().toISOString();
+    Ember.set(auditPojo, 'modified_at', new Date().toISOString());
 
     const sections = this.get('sections');
     const allItems = toFlat(sections);
